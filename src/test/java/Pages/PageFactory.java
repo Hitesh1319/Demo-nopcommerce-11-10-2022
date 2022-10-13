@@ -10,6 +10,8 @@ public class PageFactory {
     protected NotebookPage notebookPage;
     protected ShoppingCart shoppingCart;
     protected RegisterUser registerUser;
+    protected HeaderUpper headerUpper;
+    protected BillablePage billablePage;
     public PageFactory(WebDriver driver) {
         this.driver = driver;
     }
@@ -47,5 +49,19 @@ public class PageFactory {
             registerUser = new RegisterUser(driver);
         }
         return registerUser;
+    }
+
+    public HeaderUpper getHeaderUpper() {
+        if(headerUpper == null ) {
+            headerUpper = new HeaderUpper(driver);
+        }
+        return headerUpper;
+    }
+
+    public BillablePage getBillablePage() {
+        if(billablePage == null ) {
+            billablePage = new BillablePage(driver);
+        }
+        return billablePage;
     }
 }

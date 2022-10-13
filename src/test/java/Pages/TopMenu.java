@@ -5,11 +5,13 @@ import org.openqa.selenium.WebDriver;
 
 public class TopMenu {
     WebDriver driver;
+
+    String menu ="//a[contains(text(),'%s')]";
     public TopMenu(WebDriver driver) {
         this.driver = driver;
     }
 
     public void selectingMenu(String Menu) {
-        driver.findElement(By.xpath(String.format("//a[contains(text(),'%s')]", Menu))).click();
+        driver.findElement(By.xpath(String.format(menu, Menu))).click();
     }
 }
